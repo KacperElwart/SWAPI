@@ -1,0 +1,81 @@
+:root {
+  --font-main: "Poller One", cursive;
+  --font: "Roboto", sans-serif;
+}
+.card {
+  background: -webkit-radial-gradient(rgb(255, 255, 255), rgb(137, 137, 137));
+  background: radial-gradient(rgb(255, 255, 255), rgb(137, 137, 137));
+
+  width: 80%;
+  margin: 2%;
+  padding: 8%;
+  display: flex;
+  border-radius: 10%;
+  border: 2px solid #000;
+  flex-direction: column;
+}
+.film__title,
+.card--name {
+  font-family: var(--font-main);
+}
+
+.film__title,
+.card--name {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 6% 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #ffffffe1;
+
+  animation: fadeInAnimation ease 3s;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card--desc,
+summary {
+  font-family: var(--font);
+}
+.card--desc:last-child {
+  padding: 0 0 5% 0;
+}
+.card--desc--span {
+  font-weight: 600;
+}
+.card-desc {
+  cursor: pointer;
+}
+/*tablets*/
+@media only screen and (min-width: 768px) {
+  .card {
+    max-width: 80%;
+  }
+  .film__title,
+  .card--name {
+    font-size: 2.4em;
+  }
+  .card--desc,
+  summary {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .card {
+    max-width: 30%;
+    padding: 3%;
+  }
+  .film__title,
+  .card--name {
+    font-size: 1.3em;
+  }
+  .card--desc,
+  summary {
+    font-size: 1.1em;
+  }
+}
