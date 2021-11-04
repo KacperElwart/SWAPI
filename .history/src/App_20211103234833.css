@@ -29,7 +29,9 @@
   width: 100vw;
   align-items: center;
 }
-
+.cards {
+  width: 20vw;
+}
 .logo {
   max-width: 80%;
 }
@@ -44,9 +46,5 @@
     padding: 1%;
     font-size: 1em;
     margin: 2%;
-  }
-  .card__layout {
-    flex-wrap: wrap;
-    flex-direction: row;
   }
 }

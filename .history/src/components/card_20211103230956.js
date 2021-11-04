@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./card.css";
 
-const Card = ({ people, ...props }) => {
+export function Card(props) {
   const [filmDetail, setFilmDetail] = useState([]);
   useEffect(() => {
-    people.films.forEach((element) => {
+    props.people.films.forEach((element) => {
       axios
         .get(element, {
           "Content-Type": "application/json",
@@ -15,21 +15,22 @@ const Card = ({ people, ...props }) => {
         );
     });
   }, []);
-
+  console.log(filmDetail);
   return (
     <div className="card">
-      <p className="card--name">{people.name}</p>
+      <p className="card--name">{props.people.name}</p>
       <p className="card--desc">
-        <span className="card--desc--span">GENDER:</span> {people.gender}
+        <span className="card--desc--span">GENDER:</span> {props.people.gender}
       </p>
       <p className="card--desc">
-        <span className="card--desc--span">HAIR COLOR:</span> {people.hair}
+        <span className="card--desc--span">HAIR COLOR:</span>{" "}
+        {props.people.hair}
       </p>
       <p className="card--desc">
-        <span className="card--desc--span">HEIGHT:</span> {people.height}
+        <span className="card--desc--span">HEIGHT:</span> {props.people.height}
       </p>
       <p className="card--desc">
-        <span className="card--desc--span">MASS:</span> {people.mass}
+        <span className="card--desc--span">MASS:</span> {props.people.mass}
       </p>
       <p className="film__title">Films</p>
       {filmDetail &&
@@ -42,6 +43,4 @@ const Card = ({ people, ...props }) => {
         ))}
     </div>
   );
-};
-
-export default Card;
+}

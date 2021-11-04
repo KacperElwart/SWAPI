@@ -1,6 +1,6 @@
 import axios from "axios";
 import "./App.css";
-import Card from "./components/card";
+import { Card } from "./components/card";
 import { useState, useEffect } from "react";
 import logo from "./assets/logo.jpg";
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./card.css";
 
-const Card = ({ people, ...props }) => {
+const Card=({people,...props}) {
   const [filmDetail, setFilmDetail] = useState([]);
   useEffect(() => {
     people.films.forEach((element) => {
@@ -23,7 +23,8 @@ const Card = ({ people, ...props }) => {
         <span className="card--desc--span">GENDER:</span> {people.gender}
       </p>
       <p className="card--desc">
-        <span className="card--desc--span">HAIR COLOR:</span> {people.hair}
+        <span className="card--desc--span">HAIR COLOR:</span>{" "}
+        {people.hair}
       </p>
       <p className="card--desc">
         <span className="card--desc--span">HEIGHT:</span> {people.height}
@@ -42,6 +43,7 @@ const Card = ({ people, ...props }) => {
         ))}
     </div>
   );
-};
+}
+
 
 export default Card;

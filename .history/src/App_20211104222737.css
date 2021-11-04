@@ -49,4 +49,8 @@
     flex-wrap: wrap;
     flex-direction: row;
   }
+  .card {
+    width: 40%;
+    min-height: 30%;
+  }
 }
